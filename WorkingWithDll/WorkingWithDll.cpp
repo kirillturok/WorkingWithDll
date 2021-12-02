@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 
-#define OUTPUT_STRING "replace mee"
-#define REPLACE_STRING "haha this is my place now"
+#define OUTPUT_STRING "old string"
+#define REPLACE_STRING "NEW STRING!!!"
 #define MAX_STRING_SIZE 256
 
 #define REMOTE_PROCESS_PATH L"D:\\5 семестр\\ОСиСП\\l3\\WorkingWithDll\\Debug\\Process.exe"
@@ -37,7 +37,7 @@ void staticFunc() {
 void dynamicFunc() {
 	HINSTANCE stringReplaceDll;
 	importedFuncPointer replaceStringPointer;
-	stringReplaceDll = LoadLibrary(L"osisp3DLL.dll");
+	stringReplaceDll = LoadLibrary(L"LibDLL.dll");
 	replaceStringPointer = (importedFuncPointer)GetProcAddress(stringReplaceDll, "replaceString");
 	char outputString[MAX_STRING_SIZE];
 	strcpy_s(outputString, OUTPUT_STRING);
